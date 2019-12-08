@@ -2,8 +2,6 @@ import * as React from 'react';
 
 export class App extends React.Component<{}> {
   render() {
-    return <p>Hello World</p>;
+    return <p>Hello World Of TypeSrcript</p>;
   }
 }
-
-export default App;

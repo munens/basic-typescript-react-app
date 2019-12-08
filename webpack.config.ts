@@ -1,8 +1,10 @@
-const path = require('path');
+import * as path from 'path';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as webpack from 'webpack';
 
-module.exports = {
+const config: webpack.Configuration = {
 
-  mode: 'production',
+  mode: 'development',
 
   entry: path.resolve(__dirname, './src/index.tsx'),
 
@@ -32,7 +34,15 @@ module.exports = {
 
   resolve: {
     // file extensions:
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  }
+    extensions: ['.ts', '.tsx', '.js', '.jsx', ".json"]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ]
 
 }
+
+export default config;
